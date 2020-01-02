@@ -1,19 +1,19 @@
 # -*- coding:utf-8 -*-
 # author:xinfei
-import json
+#import json
 from random import randint
 import time
 import threading
 import logging
 
-import requests
+#import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
-from PIL import Image
-from convert import getverify1
+#from PIL import Image
+#from convert import getverify1
 import base64
 from questionBank import dataBank
 from selenium.webdriver.common.action_chains import ActionChains
@@ -61,6 +61,7 @@ def login():
 '''-------------------测试账号登录--------------------------------'''
 def login_test():
     driver.maximize_window()
+    driver.find_element_by_xpath('/html/body/div[2]/div/div/ul/li[2]').click()
     driver.find_element_by_id("uname").clear()
     driver.find_element_by_id("uname").send_keys("18016131821")
     driver.find_element_by_id("pwd").clear()
@@ -184,7 +185,7 @@ def answer_question():
     try:
         while i<=5:
             time.sleep(2)
-            data1=driver.find_element_by_xpath("//span[@data-v-578c4e13][2]").text
+            data1=driver.find_element_by_xpath("/html/body/div/div/div[2]/div/div/div[1]/div/div[2]/div[1]/span[2]").text
             time.sleep(2)
             for key, value in dataBank.data_bank.items():
                 if key == data1:
@@ -335,7 +336,6 @@ def main_login():
     #--------------------签名5分------------------------
     #time.sleep(2)
     #sign_name()
-    driver.maximize_window()
     #--------------------回答问题2分--------------------
     for _ in range(2):
         answer_question()
@@ -374,9 +374,8 @@ def main_login():
 '''--------------------主程序------------------------'''
 if __name__ == '__main__':
     #login()
-    #login_test()
+    login_test()
     time.sleep(15)
-    driver.maximize_window()
     main_login()
     '''
     if driver.current_url == "https://www.dangjianwang.com/news#/news?system_id=8081783f16befa6e694e4732667acd1b&menu_id=0495acb06d34106ac7f68b6afa180b19&code=1102&template=2":
