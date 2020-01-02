@@ -335,7 +335,7 @@ def hang_time():
 def main_login():
     #--------------------签名5分------------------------
     #time.sleep(2)
-    #sign_name()
+    sign_name()
     #--------------------回答问题2分--------------------
     for _ in range(2):
         answer_question()
