@@ -180,14 +180,15 @@ def validate_code():
 '''----------------回答问题4分--------------------'''
 def answer_question():
     time.sleep(1)
-    driver.get("https://www.dangjianwang.com/study#/exam?id=18&type=2&enterType=1&name=%E5%8D%81%E4%B9%9D%E5%A4%A7%E6%8A%A5%E5%91%8A100%E9%A2%98")
+    #driver.get("https://www.dangjianwang.com/study#/exam?id=18&type=2&enterType=1&name=%E5%8D%81%E4%B9%9D%E5%A4%A7%E6%8A%A5%E5%91%8A100%E9%A2%98")
+    driver.get("https://www.dangjianwang.com/study#/exam?id=1017&type=2&enterType=1&name=%E2%80%9C%E4%B8%8D%E5%BF%98%E5%88%9D%E5%BF%83%E3%80%81%E7%89%A2%E8%AE%B0%E4%BD%BF%E5%91%BD%E2%80%9D%E4%B8%BB%E9%A2%98%E6%95%99%E8%82%B2%E7%AD%94%E9%A2%98")
     i=1
     try:
         while i<=5:
             time.sleep(2)
             data1=driver.find_element_by_xpath("/html/body/div/div/div[2]/div/div/div[1]/div/div[2]/div[1]/span[2]").text
             time.sleep(2)
-            for key, value in dataBank.data_bank.items():
+            for key, value in dataBank.data_bank2.items():
                 if key == data1:
                     chioce_option(value,i)
             '''
