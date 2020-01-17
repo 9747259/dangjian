@@ -193,7 +193,7 @@ def answer_question():
             time.sleep(2)
             for key, value in dataBank.data_bank_total[my_choice].items():
                 if key == data1:
-                    chioce_option(value,i)
+                    chioce_option(value, i)
             '''
             else:
                     driver.find_element_by_xpath("//*[text()='B']/preceding-sibling::span[1]").click()
