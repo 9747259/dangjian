@@ -341,11 +341,13 @@ def main_login():
     #time.sleep(2)
     sign_name()
     #--------------------回答问题2分--------------------
-    for _ in range(2):
-        answer_question()
+    #for _ in range(2):
+        #answer_question()
+    answer_question()
     #--------------------新闻回复10分--------------------
     for message_web in dataBank.message_webs:
         news_study(message_web)
+    answer_question()
     #--------------------党员视角（发图片）4分----------------
     count_view_angle = 1
     total_view_angle = 1
