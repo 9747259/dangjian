@@ -36,12 +36,11 @@ driver.implicitly_wait(30)
 '''---------------------正式账号登录-------------------------'''
 def login():
     driver.maximize_window()
-    #driver.find_element_by_tag_name("账号密码").click()
-    #driver.find_element_by_xpath('/html/body/div[2]/div/div/ul/li[2]').click()
-    time.sleep(2)
+    driver.find_element_by_xpath('/html/body/div[2]/div/div/ul/li[2]').click()
+    driver.find_element_by_id("uname").clear()
     driver.find_element_by_id("uname").send_keys("18016131821")
     driver.find_element_by_id("pwd").clear()
-    driver.find_element_by_id("pwd").send_keys("xinfei240546")
+    driver.find_element_by_id("pwd").send_keys("xinfei123456")
     validate_code()
     #driver.find_element_by_id("verifyCode").send_keys(text)
     with open(r'.//picture//bb.png', 'rb') as f:
